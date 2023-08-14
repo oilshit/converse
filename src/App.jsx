@@ -24,7 +24,7 @@ function App() {
   const processUnitTo = (value) => {
     const conversedValue = Number(value) + (273.15 * -1);
 
-    changeUnitTo(Number(value));
+    changeUnitTo(value);
     changeUnitFrom(conversedValue);
   };
 
