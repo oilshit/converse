@@ -38,3 +38,9 @@ main {
 
   padding: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+  }
+}
