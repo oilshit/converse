@@ -15,16 +15,16 @@ function App() {
   const [unitTo, changeUnitTo] = useState("");
 
   const processUnitFrom = (value) => {
-    const conversedValue = value + 273.15;
+    const conversedValue = Number(value) + 273.15;
 
     changeUnitFrom(value);
     changeUnitTo(conversedValue);
   };
 
   const processUnitTo = (value) => {
-    const conversedValue = value + (273.15 * -1);
+    const conversedValue = Number(value) + (273.15 * -1);
 
-    changeUnitTo(value);
+    changeUnitTo(Number(value));
     changeUnitFrom(conversedValue);
   };
 
@@ -38,7 +38,7 @@ function App() {
             Unit Converter
           </div>
 
-          <div style={{ borderRadius: 2, overflow: "hidden", height: 30, }}>
+          <div style={{ borderRadius: 2, overflow: "hidden", height: 30, }} className='title-right'>
             <a href='https://github.com/oilshit' target='_blank' rel="noreferrer">
               <img src={logo} width={30} height={30} alt='logo' />
             </a>
@@ -48,21 +48,23 @@ function App() {
         <div className='form-unit'>
           {unit.from}
           <input
-            type="number"
+            type="text"
             name="unitFrom"
+            pattern="[0-9]+"
             id="unitFrom"
             value={unitFrom}
-            onChange={e => processUnitFrom(Number(e.target.value))} />
+            onChange={e => processUnitFrom(e.target.value)} />
         </div>
 
         <div className='form-unit'>
           {unit.to}
           <input
-            type="number"
+            type="text"
             name="unitTo"
+            pattern="[0-9]+"
             id="unitTo"
             value={unitTo}
-            onChange={e => processUnitTo(Number(e.target.value))} />
+            onChange={e => processUnitTo(e.target.value)} />
         </div>
       </main>
     </GlobalContext.Provider>

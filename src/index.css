@@ -34,7 +34,10 @@ input[type=number] {
 main {
   max-width: 450px;
   height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
+  border-left: 1px solid #2E294E;
+  border-right: 1px solid #2E294E;
 
   padding: 1rem;
 }
@@ -42,5 +45,6 @@ main {
 @media screen and (max-width: 768px) {
   main {
     width: 100%;
+    border: none;
   }
 }

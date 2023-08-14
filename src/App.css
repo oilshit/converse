@@ -9,6 +9,15 @@
   font-weight: 700;
 }
 
+.title-right {
+  scale: 1;
+  transition: all .3s ease;
+}
+
+.title-right:hover {
+  scale: 1.3;
+}
+
 .form-unit {
   display: flex;
   flex-direction: column;
@@ -17,9 +26,20 @@
 
 .form-unit input {
   padding: .5rem;
+  font-weight: 700;
   border-radius: .25rem;
   margin-top: .25rem;
   border: 1px solid #2E294E;
 
   font-family: "Space Grotesk", sans-serif;
+  
+  transition: all .3s ease;
+}
+
+.form-unit input:focus {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+#unitTo {
+  font-size: 2rem;
 }
